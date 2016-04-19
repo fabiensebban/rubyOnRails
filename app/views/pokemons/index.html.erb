@@ -1,0 +1,32 @@
+<!-- app/views/pokemons/index.html.erb -->
+
+<h1>Liste des Pokemons</h1>
+
+<ul>
+	<% @pokemons.each do |pokemon|%>
+		<li><%= pokemon.name %></li>
+	<% end %>
+</ul>
+
+<% if @pokemons.any? %>
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nom</th>
+			<th>Actoins</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @pokemons.each do |pokemon| %>
+			<tr> <%# concaténation: "#{pokemon.name} : #{pokemon.id}"%> 
+				<th><%= pokemon.id %></th>
+				<th><%= pokemon.name %></th>
+				<th><%= link_to 'Afficher', pokemon %></th>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<% else %>
+	<p>Il n'y a pas de Pokemon. </p>
+<% end %>
