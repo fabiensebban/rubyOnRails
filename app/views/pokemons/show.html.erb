@@ -2,4 +2,18 @@
 
 <h1>Afficher un Pokemon</h1>
 
-<p>Nom : <%= @pokemon.name %></p>
+<p>
+	Numéro : <%= @pokemon.number %>
+</p>
+<p>
+	Nom : <%= @pokemon.name %>
+</p>
+<p>
+	Level : <%= @pokemon.level %>
+</p>
+<p>
+	Health points : <%= @pokemon.health_points %>
+</p>
+<p>
+	<%= link_to 'Editer', edit_pokemon_path(@pokemon), class: 'btn btn-default' %>
+</p>

@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root 'home#index'
-  resources :pokemons, only: [:index, :show]
+  get 'index' => 'home#index'
+  resources :pokemons
 end

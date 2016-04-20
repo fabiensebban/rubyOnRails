@@ -2,27 +2,33 @@
 
 <h1>Liste des Pokemons</h1>
 
-<ul>
-	<% @pokemons.each do |pokemon|%>
-		<li><%= pokemon.name %></li>
-	<% end %>
-</ul>
+<p>
+	<%= link_to 'Ajouter', new_pokemon_path, class: 'btn btn-success' %>
+</p>
 
 <% if @pokemons.any? %>
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>#</th>
 			<th>Nom</th>
-			<th>Actoins</th>
+			<th colspan="3">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @pokemons.each do |pokemon| %>
 			<tr> <%# concaténation: "#{pokemon.name} : #{pokemon.id}"%> 
-				<th><%= pokemon.id %></th>
-				<th><%= pokemon.name %></th>
-				<th><%= link_to 'Afficher', pokemon %></th>
+				<td><%= pokemon.id %></td>
+				<td><%= pokemon.name %></td>
+				<td><%= link_to 'Afficher', pokemon %></td>
+				<td><%= link_to 'Editer', edit_pokemon_path(pokemon) %></td>
+				<td><%= link_to 'Supprimer', pokemon, 
+					method: :delete,
+					data: {
+						confirm: 'Êtes-vous sûr(e) de vouloir supprimer ce Pokemon ?'
+					},
+					class: 'btn btn-danger' %>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>

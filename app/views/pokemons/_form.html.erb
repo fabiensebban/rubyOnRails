@@ -1,0 +1,21 @@
+<%= form_for @pokemon do |f| %>
+<p>
+	<%= f.label :number %><br>
+	<%= f.text_field :number, class: 'form-control' %>
+</p>
+<p>
+	<%= f.label :name %><br>
+	<%= f.text_field :name, class: 'form-control' %>
+</p>
+<p>
+	<%= f.label :level %><br>
+	<%= f.text_field :level, class: 'form-control' %>
+</p>
+<p>
+	<%= f.label :health_points %><br>
+	<%= f.text_field :health_points, class: 'form-control' %>
+</p>
+<p>
+	<%= f.submit 'Ajouter', class: 'btn btn-primary' %>
+</p>
+<% end %>
