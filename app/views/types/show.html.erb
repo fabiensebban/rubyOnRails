@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @type.name %>
+</p>
+
+<p>
+  <strong>Couleur:</strong>
+  <%= @type.color %>
+</p>
+
+<%= link_to 'Edit', edit_type_path(@type), class: 'btn btn-info'%> |
+<%= link_to 'Retour à la liste des type', types_path, class: 'btn' %>
