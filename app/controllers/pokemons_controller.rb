@@ -47,7 +47,8 @@ class PokemonsController < ApplicationController
 			:name,
 			:level,
 			:number,
-			:health_points)
+			:health_points,
+			:type_id)
 	end
 
 	def set_pokemon

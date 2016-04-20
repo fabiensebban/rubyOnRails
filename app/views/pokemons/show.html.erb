@@ -15,5 +15,19 @@
 	Health points : <%= @pokemon.health_points %>
 </p>
 <p>
+	Type:
+	<% type = @pokemon.type %>
+	<% if type.nil? %>
+	il n'y a pas encore de type défini
+	<% else %>
+		<%= tpe_bage(type.name, type.color) %>
+		<!--
+		<span style="background: <%= type.color %>" class="badge">
+		<%= type.name %>
+		</span>
+		-->
+	<% end %>
+</p>
+<p>
 	<%= link_to 'Editer', edit_pokemon_path(@pokemon), class: 'btn btn-default' %>
 </p>
