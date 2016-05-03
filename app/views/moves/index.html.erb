@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Moves</h1>
+<h1>Liste des attaques</h1>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= move.name %></td>
         <td><%= move.description %></td>
         <td><%= move.type %></td>
-        <td><%= link_to 'Show', move %></td>
-        <td><%= link_to 'Edit', edit_move_path(move) %></td>
-        <td><%= link_to 'Destroy', move, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Afficher', move, class: 'btn btn-info'%></td>
+        <td><%= link_to 'Edit', edit_move_path(move), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', move, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Move', new_move_path %>
+<%= link_to 'Ajouter une attaque', new_move_path %>
