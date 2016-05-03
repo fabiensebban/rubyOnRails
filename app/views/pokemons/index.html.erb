@@ -40,6 +40,8 @@
 		<% end %>
 	</tbody>
 </table>
+
+<%= will_paginate @pokemons, renderer: BootstrapPagination::Rails %> 
 <% else %>
 	<p>Il n'y a pas de Pokemon. </p>
 <% end %>
