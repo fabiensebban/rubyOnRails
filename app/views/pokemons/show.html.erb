@@ -14,6 +14,7 @@
 <p>
 	Health points : <%= @pokemon.health_points %>
 </p>
+
 <p>
 	Type:
 	<% type = @pokemon.type %>
@@ -27,6 +28,10 @@
 		</span>
 		-->
 	<% end %>
+</p>
+
+<p>
+	Attaque : <%= render partial: 'moves/moves_list', locals: { moves: @pokemon.moves } %>
 </p>
 <p>
 	<%= link_to 'Editer', edit_pokemon_path(@pokemon), class: 'btn btn-default' %>

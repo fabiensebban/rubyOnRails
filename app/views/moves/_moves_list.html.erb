@@ -1,0 +1,8 @@
+<% if moves.any? %>
+	code explicite: 
+	<%= moves.map { |move| move.name }.join(', ') %>
+	code simplifié: 
+	<%= moves.map(&:name).join(', ')%>
+<% else %>
+	pas d'attaque
+<% end %>
