@@ -30,6 +30,7 @@ class PokemonsController < ApplicationController
 
 	def update
 		if @pokemon.update pokemon_params
+			flash[:success] = "Le Pokemon #{@pokemon.name} a bien été mis à jour"
 			redirect_to @pokemon
 		else
 			render 'edit'

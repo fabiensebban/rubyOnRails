@@ -1,8 +1,10 @@
 <% if moves.any? %>
-	code explicite: 
+	<%#code explicite: %>
 	<%= moves.map { |move| link_to(move.name, move) }.join(', ').html_safe %>
+	<%#
 	code simplifié: 
 	<%= moves.map(&:name).join(', ')%>
+
 <% else %>
 	pas d'attaque
 <% end %>

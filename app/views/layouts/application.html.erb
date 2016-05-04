@@ -17,6 +17,12 @@
         <%= link_to 'Liste Types', types_path(), class: 'btn' %>
         <%= link_to 'Liste Attaques', moves_path(), class: 'btn' %>
       </p>
+      <% flash.each do |name, msg| -%> 
+        <div class="alert alert-<%= alert_class(name) %>">
+        <a class="close" data-dismiss="alert">x</a>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        </div>
+      <% end -%>
     </header>
 		<%= yield %>
 	</div>
