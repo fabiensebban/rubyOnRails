@@ -12,7 +12,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @move.type %>
+  <%= render partial: 'types/type', locals: { type: @move.type }%>
 </p>
 
 <%= link_to 'Edit', edit_move_path(@move) %> |
