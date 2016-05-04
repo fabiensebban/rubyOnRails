@@ -21,11 +21,7 @@
 				<td><%= pokemon.id %></td>
 				<td><%= pokemon.name %></td>
 				<td>
-					<% if !pokemon.type.nil? %>
-						<%= type_badge(pokemon.type.name, pokemon.type.color) %>
-					<% else %>
-						non défini
-					<% end %>
+					<%= render partial: 'types/type', locals: { type: pokemon.type }%>
 				</td>
 				<td><%= link_to 'Afficher', pokemon %></td>
 				<td><%= link_to 'Editer', edit_pokemon_path(pokemon) %></td>

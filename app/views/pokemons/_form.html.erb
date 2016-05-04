@@ -16,7 +16,10 @@
 		<%= f.input :health_points, label: 'Points de vie', class: 'form-control' %>
 	</p>
 	<p>
-		<%= f.association :moves, label: 'Attaques', class: 'forma-control' %>
+		<%= f.association :moves, label: 'Attaques',
+								  as: :check_boxes,
+								  item_wrapper_tag: :label,
+								  item_wrapper_class: 'checkboxe-inline' %>
 	</p>
 	<p>
 		<%= f.submit 'Ajouter', class: 'btn btn-primary' %>
