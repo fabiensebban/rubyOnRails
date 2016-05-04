@@ -6,10 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <% unless Rails.application.assets.find_asset("#{controller_name}.css").nil? %>
+    <%= stylesheet_link_tag controller_name, media: 'all', 'data-turbolinks-track' => true %> 
+  <% end %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <% unless Rails.application.assets.find_asset("#{controller_name}.css").nil? %>
+      <%= javascript_include_tag controller_name, media: 'all', 'data-turbolinks-track' => true %>
+    <% end %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= "#{controller_name}-#{action_name}"%>">
 	<div class="container">
     <header>
       <p>

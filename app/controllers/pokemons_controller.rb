@@ -2,7 +2,8 @@
 
 class PokemonsController < ApplicationController
 #filtre qui s'execute à chaque début d'actionpour les actions spécifiés dans le only
-	before_action :set_pokemon, only: [:show, :edit, :update, :destroy] 
+	before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
+	before_action :check_minimum
 
 	def index 
 		@pokemons = Pokemon.paginate(page: params[:page], per_page: 1)
@@ -56,5 +57,11 @@ class PokemonsController < ApplicationController
 
 	def set_pokemon
 		@pokemon = Pokemon.find params[:id]
+	end
+
+	def check_minimum
+		count = Pokemon.count
+		limit = 10
+		flash[:danger] = "Vorte Pokedex contient moins de #{limit} Pokemons" if count < limit
 	end
 end 
