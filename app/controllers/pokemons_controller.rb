@@ -53,6 +53,7 @@ class PokemonsController < ApplicationController
 			:number,
 			:health_points,
 			:type_id,
+			:avatar,
 			move_ids: [])
 	end
 
