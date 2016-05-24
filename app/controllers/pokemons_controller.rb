@@ -4,6 +4,7 @@ class PokemonsController < ApplicationController
 #filtre qui s'execute à chaque début d'actionpour les actions spécifiés dans le only
 	before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
 	before_action :check_minimum
+	before_action :authenticate_user!, only: [:new, :create]
 
 	def index 
 		@pokemons = Pokemon.paginate(page: params[:page], per_page: 1)

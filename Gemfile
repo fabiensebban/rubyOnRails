@@ -35,6 +35,9 @@ gem 'will_paginate-bootstrap'
 #Gestion utilisateurs
 gem 'devise'
 
+# image uploader 
+gem 'paperclip'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
