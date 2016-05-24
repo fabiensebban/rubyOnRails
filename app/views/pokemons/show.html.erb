@@ -2,6 +2,12 @@
 
 <h1>Afficher un Pokemon</h1>
 
+
+<% if @pokemon.avatar.exists? %>
+  <div style="text-align: center;">
+    <%= image_tag(@pokemon.avatar.url(:medium))%>
+  </div>
+<% end %>
 <p>
 	Numéro : <%= @pokemon.number %>
 </p>

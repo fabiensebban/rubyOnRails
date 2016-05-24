@@ -13,14 +13,21 @@
 	<thead>
 		<tr>
 			<th>#</th>
+      <th>Avatar</th>
 			<th>Nom</th>
 			<th colspan="4">Actions</th>
+      <th></th>
+      <th></th>
+      <th></th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @pokemons.each do |pokemon| %>
-			<tr> <%# concaténation: "#{pokemon.name} : #{pokemon.id}"%> 
-				<td><%= pokemon.id %></td>
+			<tr> <%# concaténation: "#{pokemon.name} : #{pokemon.id}"%>
+        <td><%= pokemon.id %></td>
+        <td>
+          <%= pokemon.avatar.exists? ? image_tag(pokemon.avatar.url(:thumb)) : '&empty;'.html_safe %>
+        </td>
 				<td><%= pokemon.name %></td>
 				<td>
 					<%= render partial: 'types/type', locals: { type: pokemon.type }%>

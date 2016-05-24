@@ -18,3 +18,6 @@
 
 # RubyMine files
 .idea
+
+# Uploaded Images
+/public/system/*
