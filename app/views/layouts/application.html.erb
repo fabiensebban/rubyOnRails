@@ -33,10 +33,10 @@
 
       <p>
         <% if user_signed_in? %>
-          Connecté en tant que <%= current_user.email %> - 
+          Connecté en tant que <%= current_user.username %> -
           <%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'Se deconnecter', new_user_session_path %>
+          <%= link_to 'Se connecter', new_user_session_path %>
         <% end %>
       </p>
     </header>
