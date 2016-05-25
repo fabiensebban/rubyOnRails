@@ -40,5 +40,7 @@
 	Attaque : <%= render partial: 'moves/moves_list', locals: { moves: @pokemon.moves } %>
 </p>
 <p>
-	<%= link_to 'Editer', edit_pokemon_path(@pokemon), class: 'btn btn-default' %>
+  <% if can? :update, @pokemon %>
+	  <%= link_to 'Editer', edit_pokemon_path(@pokemon), class: 'btn btn-default' %>
+  <% end %>
 </p>

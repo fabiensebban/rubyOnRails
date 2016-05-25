@@ -3,7 +3,7 @@
 <h1><%= t :'.title'%></h1>
 
 <p>
-<% if user_signed_in? %>
+<% if can? :create, Pokemon %>
 	<%= link_to 'Ajouter', new_pokemon_path, class: 'btn btn-success' %>
 <% end %>
 </p>
@@ -33,6 +33,7 @@
 					<%= render partial: 'types/type', locals: { type: pokemon.type }%>
 				</td>
 				<td><%= link_to 'Afficher', pokemon %></td>
+        <% if can? :manage, Pokemon %>
 				<td><%= link_to 'Editer', edit_pokemon_path(pokemon) %></td>
 				<td><%= link_to 'Supprimer', pokemon, 
 					method: :delete,
@@ -41,6 +42,7 @@
 					},
 					class: 'btn btn-danger' %>
 				</td>
+            <% end %>
 			</tr>
 		<% end %>
 	</tbody>
