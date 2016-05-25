@@ -2,7 +2,8 @@
 
 class PokemonsController < ApplicationController
 #filtre qui s'execute à chaque début d'actionpour les actions spécifiés dans le only
-	before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
+	load_and_authorize_resource
+
 	before_action :check_minimum
 	before_action :authenticate_user!, only: [:new, :create]
 
@@ -15,7 +16,6 @@ class PokemonsController < ApplicationController
 	end
 
 	def new
-		@pokemon = Pokemon.new
 	end
 
 	def create
@@ -55,10 +55,6 @@ class PokemonsController < ApplicationController
 			:type_id,
 			:avatar,
 			move_ids: [])
-	end
-
-	def set_pokemon
-		@pokemon = Pokemon.find params[:id]
 	end
 
 	def check_minimum
