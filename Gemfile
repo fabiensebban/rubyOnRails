@@ -38,6 +38,10 @@ gem 'devise'
 # image uploader 
 gem 'paperclip'
 
+# Gestion des utilisateurs 
+gem 'cancancan'
+gem 'rolify'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
