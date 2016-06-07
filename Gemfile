@@ -42,6 +42,9 @@ gem 'paperclip'
 gem 'cancancan'
 gem 'rolify'
 
+# URI simpatique
+gem 'friendly_id'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
