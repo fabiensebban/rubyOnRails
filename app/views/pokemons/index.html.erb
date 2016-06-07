@@ -3,6 +3,22 @@
 <h1><%= t :'.title'%></h1>
 
 <p>
+  <%= simple_form_for :pokemons, url: pokemons_path, method: :get, html: {class: 'form-inline text-right'} do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <%= f.input_field :search, label: false, placeholder: 'Recherche', class: 'form-control', value: @search_value %>
+      <span class="input-group">
+        <%= button_tag type: :submit, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <% end %>
+      </span>
+    </div>
+  </div>
+<% end %>
+
+</p>
+
+<p>
 <% if can? :create, Pokemon %>
 	<%= link_to 'Ajouter', new_pokemon_path, class: 'btn btn-success' %>
 <% end %>

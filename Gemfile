@@ -45,6 +45,9 @@ gem 'rolify'
 # URI simpatique
 gem 'friendly_id'
 
+# Moteur de recherche
+gem 'search_cop'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
