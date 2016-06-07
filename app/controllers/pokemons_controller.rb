@@ -8,8 +8,12 @@ class PokemonsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 
 	def index 
-		@pokemons = Pokemon.paginate(page: params[:page], per_page: 1)
+		@pokemons = Pokemon.paginate(page: params[:page], per_page: 4)
 						   .includes(:type)
+		if params[:pokemons]
+			@search_value = search_params[:search]
+			@pokemons = @pokemons.search(@search_value)
+		end
 	end
 
 	def show
@@ -62,4 +66,9 @@ class PokemonsController < ApplicationController
 		limit = 10
 		flash[:danger] = "Vorte Pokedex contient moins de #{limit} Pokemons" if count < limit
 	end
+
+	def search_params
+		params.require(:pokemons).permit(:search)
+	end
+
 end 

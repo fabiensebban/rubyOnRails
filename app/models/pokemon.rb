@@ -3,6 +3,8 @@
 class Pokemon < ActiveRecord::Base 
 	extend FriendlyId
 
+  include SearchCop
+
   belongs_to :type
   has_many :pokemon_moves
   has_many :moves, through: :pokemon_moves
@@ -22,6 +24,10 @@ class Pokemon < ActiveRecord::Base
   # validates :username, presence: true, uniqueness: true
 
   friendly_id :slug_candidates, use: [:slugged, :finders]
+
+  search_scope :search do
+    attributes :name, :slug
+  end
 
   def slug_candidates
     [ :name, [:id, :name] ]
